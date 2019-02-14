@@ -1,0 +1,48 @@
+<!-- sample of what the program produces -->
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple Polylines</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat: 33.5917265, lng: -106.2022343},
+          mapTypeId: 'terrain'
+        });
+
+        var flightPlanCoordinates = [ { lat: 39.6111, lng: -104.9532 }, { lat: 25.9476, lng: -80.2778 }, { lat: 37.751, lng: -97.822 }, { lat: 37.751, lng: -97.822 }, { lat: 37.751, lng: -97.822 }, { lat: 37.751, lng: -97.822 }, { lat: 37.751, lng: -97.822 }, { lat: 36.1754, lng: -95.9112 }, { lat: 36.1754, lng: -95.9112 }, { lat: 37.751, lng: -97.822 }, { lat: 37.751, lng: -97.822 }, { lat: 37.751, lng: -97.822 } ]; // this is where iptrace inputs lat / long
+
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        flightPath.setMap(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+  </body>
+</html>
