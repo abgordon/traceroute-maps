@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	geoAPIKey       = "<your-key>"
-	googleMapAPIKey = "<your-key>"
+	geoAPIKey       = "<your-token>"
+	googleMapAPIKey = "<your-token>"
 )
 
 var htmlTemplate = `<html>
@@ -129,7 +129,14 @@ func main() {
 		}
 	}
 
-	fmt.Printf("\n\n%s\n\n", fmt.Sprintf(htmlTemplate, str, googleMapAPIKey))
+	html := fmt.Sprintf(htmlTemplate, str, googleMapAPIKey)
+	err = ioutil.WriteFile("index.html", []byte(html), 0644)
+	if err != nil {
+		fmt.Printf("error writing to index.html, exiting: %v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Printf("Traceroute render complete and written to index.html. Run 'php -S localhost:8080' to view in a browser.\n")
 }
 
 func resolveHost(spl []string) string {

@@ -8,6 +8,8 @@ The `traceroute` utility allows you to see all the network hops a network reques
 
 And then runs a traceroute of your request. From the output, it plucks the IP addresses, geolocates them with a free API, and then uses the always-handy Google Maps API to render the lines onto a map.
 
+The program then spits out some HTML that is written to `index.html`, which I then view with `php -S localhost:8080` and point my browser to that address.
+
 The results are a not-so great estimation of what the internet background looks like (lukewarm applause)! My hope was that the lines would line up somewhat with the physical infrastructure of the Internet Backbone, but of course the hops are drawn in a straight line, which doesn't correspond to reality. See below hop from Denver-Miami-Kansas City-Oklahoma:
 
 ![hops.png](img/hops.png)
