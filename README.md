@@ -2,9 +2,9 @@
 
 The `traceroute` utility allows you to see all the network hops a network request makes before arriving at its destination. This is an useful tool for debugging, but it also provides an interesting insight into _physical_ infrastructure - namely, datacenters and the internet backbone.
 
-`main.go` accepts a single host as an argument:
+`main.go` accepts a single host as an argument:
 
-`go run main.go google.com`
+`go run main.go google.com`
 
 And then runs a traceroute of your request. From the output, it plucks the IP addresses, geolocates them with a free API, and then uses the always-handy Google Maps API to render the lines onto a map.
 
