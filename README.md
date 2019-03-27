@@ -10,7 +10,7 @@ And then runs a traceroute of your request. From the output, it plucks the IP ad
 
 The program then spits out some HTML that is written to `index.html`, which I then view with `php -S localhost:8080` and point my browser to that address.
 
-The results are a not-so great estimation of what the internet background looks like (lukewarm applause)! My hope was that the lines would line up somewhat with the physical infrastructure of the Internet Backbone, but of course the hops are drawn in a straight line, which doesn't correspond to reality. See below hop from Denver-Miami-Kansas City-Oklahoma:
+The results are a not-so great estimation of what the internet backbone looks like (lukewarm applause)! My hope was that the lines would line up somewhat with the physical infrastructure of the Internet Backbone, but of course the hops are drawn in a straight line, which doesn't correspond to reality. See below hop from Denver-Miami-Kansas City-Oklahoma:
 
 ![hops.png](img/hops.png)
 
