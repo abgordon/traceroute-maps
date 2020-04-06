@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	geoAPIKey       = "<your-token>"
-	googleMapAPIKey = "<your-token>"
+	geoAPIKey       = "91054c91b68e957e93c2827306d158b9efdaabd19642eea40bc52f07"
+	googleMapAPIKey = "AIzaSyDTRyzl259QtnWLepj7RHdYZyfMmFhG8PY"
 )
 
 var htmlTemplate = `<html>
@@ -74,8 +74,16 @@ type ip struct {
 	ContinentCode string  `json:"continent_code"`
 	Latitude      float64 `json:"latitude"`
 	Longitude     float64 `json:"longitude"`
-	ASN           string  `json:"asn"`
+	ASN           *ASN    `json:"asn"`
 	Organisation  string  `json:"organisation"`
+}
+
+type ASN struct {
+	ASN       string `json:"asn"`
+	Name      string `json:"name"`
+	Domain    string `json:"domain"`
+	RouteCIDR string `json:"route"`
+	Type      string `json:"type"`
 }
 
 func main() {
