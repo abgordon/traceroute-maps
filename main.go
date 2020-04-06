@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	geoAPIKey       = "91054c91b68e957e93c2827306d158b9efdaabd19642eea40bc52f07"
-	googleMapAPIKey = "AIzaSyDTRyzl259QtnWLepj7RHdYZyfMmFhG8PY"
+	geoAPIKey       = "<your-key>"
+	googleMapAPIKey = "<your-key>"
 )
 
 var htmlTemplate = `<html>
